@@ -19,8 +19,10 @@
 [https://dailysync.vyzt.dev/](https://dailysync.vyzt.dev/)
 
 ### 其他仓库备份
+
 gitlab: 
 [https://gitlab.com/gooin/dailysync](https://gitlab.com/gooin/dailysync)
+
 github:（actions方式正常可用）
 [https://github.com/gooin/dailysync-rev](https://github.com/gooin/dailysync-rev)
 
