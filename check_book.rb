@@ -30,7 +30,8 @@ end
 
 
 yes = JSON.parse(response.body)['akiList'].length
-puts "#{Time.now.to_s} check with aki:#{yes} #{response.code}"
+msg = "#{Time.now.to_s} check with aki:#{yes} #{response.code}"
+puts msg
 if yes != 0
 
   uri                        = URI.parse(ENV['ENDPOINT'])
@@ -48,4 +49,7 @@ if yes != 0
   end
 
   puts response.code
+  File.open('README.md', 'a') do |f|
+    f.write(msg + " " + response.code + "\n")
+  done
 end
