@@ -51,5 +51,5 @@ if yes != 0
   puts response.code
   File.open('README.md', 'a') do |f|
     f.write(msg + " " + response.code + "\n")
-  done
+  end
 end
