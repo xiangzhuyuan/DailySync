@@ -28,4 +28,4 @@ jobs:
         timeout-minutes: 5
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: check done
+          commit_message: check sweatglass done
