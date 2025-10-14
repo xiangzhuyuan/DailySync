@@ -1,0 +1,31 @@
+name: check book
+
+on:
+  workflow_dispatch:
+  schedule:
+    #  每6小时检查一次
+    - cron: "*/30 * * * *"
+
+env:
+  # please change to your own config.
+  COOKIE: ${{ secrets.COOKIE }}
+  TARGET: ${{ secrets.TARGET }}
+  ENDPOINT: ${{ secrets.ENDPOINT }}
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: check book
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+          cache: "yarn"
+      - run: ruby check_book.rb
+        timeout-minutes: 5
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: check done
