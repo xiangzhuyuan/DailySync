@@ -33,7 +33,7 @@ yes = JSON.parse(response.body)['akiList'].length
 msg = "#{Time.now.to_s} check with aki:#{yes} #{response.code}"
 puts msg
 
-File.open('README.md', 'a') do |f|
+File.open('check_book.log', 'a') do |f|
   f.write(msg + " " + response.code + "\n")
 end
 
